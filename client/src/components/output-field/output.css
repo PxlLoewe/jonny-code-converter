@@ -1,0 +1,52 @@
+.output{
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    margin: 15px;
+    width: 100%;
+}
+
+.output h3{
+    text-align: center;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.output .output-field{
+    text-align: center;
+    width: 90%;
+    background-color: #4665fd;
+    height: 40%;
+    text-align: left;
+}
+
+.output .output-text {
+    padding: 10px;
+    position: relative;
+}
+.output-text button {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.output button{
+    margin-top: 10%;
+    display: flex;
+}
+
+.output .download-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.output .download-button{
+    display: table-row;
+    background-color: #4665fd;
+    width: 20%;
+}
+
+.output .copy-button{
+    display: table-row;
+}
