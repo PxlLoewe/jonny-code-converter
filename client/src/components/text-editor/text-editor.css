@@ -7,11 +7,6 @@
     height: 100%;
 }
 
-.form-wrapper form{
-    display: flex;
-    flex-direction: column;
-}
-
 .form-wrapper h3{
     text-align: center;
     padding-bottom: 15px;
@@ -32,7 +27,7 @@
 }
 .form-wrapper textarea{
     padding: 8px;
-    height: auto;
+    height: 100%;
     font-family: "Liberation Serif";
     font-size: 20px;
     font-weight: 700;
@@ -40,6 +35,7 @@
     border: none;
     background-color: #4665fd;
     color: #ffffff;
+    resize: none;
 }
 .form-wrapper input[type="text"]{
     padding: 8px;
@@ -54,4 +50,10 @@
 
 .form-wrapper ::placeholder{
     color: #999999;
+}
+
+.info {
+    display: table-column;
+    text-align: center;
+    margin: 20px;
 }
