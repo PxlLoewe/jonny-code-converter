@@ -31,7 +31,11 @@ const generateJhonnyCode = (plainText, fileName) => {
                         return `10000`
                     } else {
                         if (!parseInt(line[2])) return reject({ error: { message: "argument is not a number: " + line[2], line } })
-                        return `${operations[line[1]]}${line[2]}`
+                        var argument = parseInt(line[2]).toString()
+                        while(argument.length < 2){
+                            argument = "0" + argument
+                        }
+                        return `${operations[line[1]]}${argument}`
                     }
 
                 })
