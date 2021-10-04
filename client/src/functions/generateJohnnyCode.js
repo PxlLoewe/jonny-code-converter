@@ -32,7 +32,7 @@ const generateJhonnyCode = (plainText, fileName) => {
                     } else {
                         if (!parseInt(line[2])) return reject({ error: { message: "argument is not a number: " + line[2], line } })
                         var argument = parseInt(line[2]).toString()
-                        while(argument.length < 2){
+                        while(argument.length < 3){
                             argument = "0" + argument
                         }
                         return `${operations[line[1]]}${argument}`
