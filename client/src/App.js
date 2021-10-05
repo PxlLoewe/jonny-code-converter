@@ -37,7 +37,7 @@ function App() {
         <Output fileName={fileName} convertedText={convertedText} />
       </div>
       <div className="authors">
-        created by Johannes Ambré und Tim Schäfer
+        created by Johannes Ambré & Tim Schäfer
       </div>
     </div>
   );
