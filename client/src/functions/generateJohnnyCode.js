@@ -30,12 +30,21 @@ const generateJhonnyCode = (plainText, fileName) => {
                     if (line[1] === "HLT") {
                         return `10000`
                     } else {
-                        if (!parseInt(line[2])) return reject({ error: { message: "argument is not a number: " + line[2], line } })
+                        if (isNaN(parseInt(line[2]))) return reject({ error: { message: "argument is not a number: " + line[2], line } })
                         var argument = parseInt(line[2]).toString()
-                        while(argument.length < 3){
-                            argument = "0" + argument
+                        if(isNaN(parseInt(line[1]))){
+                            while(argument.length < 3){
+                                argument = "0" + argument
+                            }
+                            return `${operations[line[1]]}${argument}`    
+                        } else {
+                            var number = parseInt(line[1]).toString()
+                            while(argument.length < 3){
+                                number = "0" + number
+                            }
+                            return number;
                         }
-                        return `${operations[line[1]]}${argument}`
+                        
                     }
 
                 })
