@@ -11,7 +11,7 @@ const operations = {
     "HLT": 10
 }
 
-const generateJhonnyCode = (plainText, fileName) => {
+const generateJhonnyCode = (plainText) => {
     return new Promise((resolve, reject) => {
         const codeSlicedRow = plainText.split("\n")
         const codeSlicedRowFormated =
@@ -29,17 +29,17 @@ const generateJhonnyCode = (plainText, fileName) => {
                         return `10000`
                     } else {
                         var argument = parseInt(line[2]).toString()
-                        if(isNaN(parseInt(line[1]))){
-			if (isNaN(parseInt(line[2]))) return reject({ error: { message: "argument is not a number: " + line[2], line } })
-                        if (line[1] !== "HLT" && !line[2]) return reject({ error: { message: "missing line reference on command: " + line[1], line } })
-			if (!operations[line[1]]) return reject({ error: { message: "Command " + line[1] + " not found.", line } })
-                            while(argument.length < 3){
+                        if (isNaN(parseInt(line[1]))) {
+                            if (isNaN(parseInt(line[2]))) return reject({ error: { message: "argument is not a number: " + line[2], line } })
+                            if (line[1] !== "HLT" && !line[2]) return reject({ error: { message: "missing line reference on command: " + line[1], line } })
+                            if (!operations[line[1]]) return reject({ error: { message: "Command " + line[1] + " not found.", line } })
+                            while (argument.length < 3) {
                                 argument = "0" + argument
                             }
-                            return `${operations[line[1]]}${argument}`    
+                            return `${operations[line[1]]}${argument}`
                         } else {
                             var number = parseInt(line[1]).toString()
-                            while(argument.length < 3){
+                            while (argument.length < 3) {
                                 number = "0" + number
                             }
                             return number;
